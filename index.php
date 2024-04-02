@@ -221,7 +221,7 @@ function popup(mylink, windowname) {
 						<div><button type="" onclick="edit();" class="btn registerbtn">Αποθήκευση αλλαγών</button></div>
 						<?php
 
-						if($_COOKIE["userid"] == "299" || $_COOKIE["userid"] == "290") {?>
+						if($_COOKIE["userid"] == "299" || $_COOKIE["userid"] == "290") || $_COOKIE["userid"] == "265") || $_COOKIE["userid"] == "293") {?>
 						<div>
 						
 							<button type="" onclick="showParentControl(this);" class="btn registerbtn">Διαχείριση Γονικού Ελέγχου</button>
