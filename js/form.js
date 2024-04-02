@@ -287,10 +287,19 @@ function login(auto){
 	})
 }
 
+function closeParentControl(){
+	document.getElementById("parentControl-Container").style.display= "none";
+					
+	document.getElementById("genderli").style.display = "block";
+	document.getElementById("dobli").style.display = "block";
+	document.getElementById("edit-buttons").style.display = "block";
+}
+
 function activateParentControl(){
 
 	const uid = document.getElementById("uid").value;
 	var ageLimit = document.getElementById("ageLimit").value;
+
 	//var playbackLimit = (document.getElementById("playbackLimit").value) ? document.getElementById("playbackLimit").value : "";
 var playbackLimit = 0;
 	const url = "http://mega.smart-tv-data.com/dev/users.php?action=enable-lock&user_id="+ uid +'&ageLimit='+ ageLimit + "&playbackLimit=" + playbackLimit;
@@ -321,8 +330,8 @@ function resetPIN(){
 				if(j.success && j.success == true){
 
 					///document.getElementById("data-form").style.display = "block";
-					document.getElementById("edit-buttons").style.display = "block";
-					document.getElementById("pin-change").style.display = "none"
+					//document.getElementById("edit-buttons").style.display = "block";
+					//document.getElementById("pin-change").style.display = "none"
 					showMsg("Η αλλαγή του PIN ολοκληρώθηκε με επιτυχία.");
 				}else if (j.success == false) {
 					showMsg("Παρουσιάστηκε πρόβλημα στην αλλαγή του PIN.");
@@ -339,14 +348,23 @@ function showPinChange(){
 }
 
 function showParentControl(a){
-	document.getElementById("ageLimit").value = ageLimit;
+	document.getElementById("change-pass-container").style.display = "none";
 	document.getElementById("genderli").style.display = "none";
 	document.getElementById("dobli").style.display = "none";
 	document.getElementById("edit-buttons").style.display = "none";
 	//a.style.display='none';
 	document.getElementById("parentControl-Container").style.display= "block";
-	document.getElementById("data-form").style.display = "none";
+	//document.getElementById("data-form").style.display = "none";
 	
+	var uid = document.getElementById("uid").value;
+	const url = "http://mega.smart-tv-data.com/dev/users.php?action=retrieve-triplet&user_id="+ uid;
+			
+	this.req = createHttpRequest(url, function(res) {
+				var j = parseJSON(res);
+				
+				document.getElementById("ageLimit").value = j.age_limit;
+			});
+
 }
 
 function showPass(a) {

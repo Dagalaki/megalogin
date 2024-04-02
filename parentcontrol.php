@@ -14,6 +14,7 @@
 		<div>
 			<div>
 				<p>Αλλάξτε το PIN σας. Ο κωδικός είναι απαραίτητος για την επιβεβαίωση του γονικού ελέγχου. To αρχικό PIN είναι: 1234
+					<br/>
 					<a style="text-decoration: underline; color:rgba(208, 0, 61, 0.9)" onclick="showPinChange()" type="button" data-test="button-change-pin-trigger">Αλλαγή PIN
 					</a>
 				</p>
@@ -31,7 +32,7 @@
 						<div data-test="change-pin-form-new-pin-label">
 							<label for="newPin">Νέο PIN</label>
 							<div>
-								<input type="password" id="newPin" name="newPin" class="" placeholder="" required="" value="" style="display: block;">
+								<input type="password" id="newPin" name="newPin" class="" placeholder="" required="" value="" style="display: block;color:black; width:150px">
 								<input type="text" id="_newPin" name="" class="" placeholder="" required="" value="" style="display: none;">
 								
 							</div>
@@ -63,7 +64,7 @@
 							<div>
 								<div data-test="parental-control-form-fieldset">
 									<div data-test="parental-control-form-age-limit">
-										<select value=<?php echo $_COOKIE['ageLimit'];?>" id="ageLimit" data-test="playback-limit-fieldset">
+										<select id="ageLimit" data-test="playback-limit-fieldset">
 										<option value="">Κατάλληλο για όλους</option>
 										<option value="1" data-test="playback-limit-option">0 ετών</option>
 										<option value="2" data-test="playback-limit-option">8 ετών</option>
@@ -98,6 +99,9 @@
 			<div>
 				<button onclick="activateParentControl()" type="button" class="btn registerbtn" style="width:270px">
 					Ενεργοποίηση κλειδώματος
+				</button>
+				<button onclick="closeParentControl()" type="button" class="btn registerbtn" style="width:140px">
+					Πίσω
 				</button>
 			</div>
 		</div>

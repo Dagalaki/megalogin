@@ -134,7 +134,7 @@ function popup(mylink, windowname) {
 							<div style="display: none" id="parentControl-Container" class="section">
 								<?php include("parentcontrol.php"); ?>
 							</div>
-							<div>
+							<div id="change-pass-container">
 
 								<ul class="simpleForm">
 									<li data-uia="field-password+wrapper" class="nfFormSpace" id="old-pass-li">
@@ -221,7 +221,7 @@ function popup(mylink, windowname) {
 						<div><button type="" onclick="edit();" class="btn registerbtn">Αποθήκευση αλλαγών</button></div>
 						<?php
 
-						if($_COOKIE["userid"] == "299") {?>
+						if($_COOKIE["userid"] == "299" || $_COOKIE["userid"] == "290") {?>
 						<div>
 						
 							<button type="" onclick="showParentControl(this);" class="btn registerbtn">Διαχείριση Γονικού Ελέγχου</button>
