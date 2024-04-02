@@ -65,8 +65,7 @@
 								<div data-test="parental-control-form-fieldset">
 									<div data-test="parental-control-form-age-limit">
 										<select id="ageLimit" data-test="playback-limit-fieldset">
-										<option value="">Κατάλληλο για όλους</option>
-										<option value="1" data-test="playback-limit-option">0 ετών</option>
+										<option value="1">Κατάλληλο για όλους</option>
 										<option value="2" data-test="playback-limit-option">8 ετών</option>
 										<option value="3" data-test="playback-limit-option">12 ετών</option>
 										<option value="4" data-test="playback-limit-option">16 ετών</option>
