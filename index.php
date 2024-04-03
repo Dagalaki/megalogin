@@ -221,12 +221,12 @@ function popup(mylink, windowname) {
 						<div><button type="" onclick="edit();" class="btn registerbtn">Αποθήκευση αλλαγών</button></div>
 						<?php
 
-						if($_COOKIE["userid"] == "299" || $_COOKIE["userid"] == "290" || $_COOKIE["userid"] == "265" || $_COOKIE["userid"] == "293") {?>
+						/*if($_COOKIE["userid"] == "299" || $_COOKIE["userid"] == "290" || $_COOKIE["userid"] == "265" || $_COOKIE["userid"] == "293") {*/ ?>
 						<div>
 						
 							<button type="" onclick="showParentControl(this);" class="btn registerbtn">Διαχείριση Γονικού Ελέγχου</button>
 						</div>
-						<?php } ?>
+						<?php /*}*/ ?>
 						<div><button type="" onclick="showPass(this);" class="btn registerbtn">Αλλαγή κωδικού</button></div>
 						<div><button type="" onclick="location='?action=del-user';" class="btn registerbtn">Διαγραφή λογαριασμού</button></div>
 					<!--div><button type="" onclick='location.href="index.php"'; class="btn registerbtn">Επιστροφή</button>
