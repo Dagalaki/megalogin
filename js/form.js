@@ -261,23 +261,15 @@ function login(auto){
 			
 			//TODO check if password from database corresponds to password given by user.
 			var url2 = "http://mega.smart-tv-data.com/dev/users.php?action=verifyuser&username="+Login+"&password="+j.password;
-			console.log("verify user url: "+ url2);
 			me.req2 = createHttpRequest(url2, function(res) {
-				console.log("verify user res: ");
-				console.log(res);
 				var j2 = parseJSON(res);
-				console.log("verify user success: "+ j2.success);
 				if(j2.success && j2.success == false) {
-					if(document.getElementById("email")) {
-						setTimeout(function() {
-						location.href = 'login.php';
-					}, 1500);
-						return;
-					}
-					showMsg("Ο κωδικός που δώσατε είναι λανθασμένος");
+					
+					if(j.password == "") showMsg("Δεν έχετε πληκρολογήσει τον κωδικό πρόσβασης.");
+					else showMsg("Ο κωδικός που δώσατε είναι λανθασμένος");
 				}
 			});
-			return;
+			
 			setCookie('userid', j.user_id, 30);
 			setCookie('pin', j.pin, 30);
 			setCookie('ageLimit', j.age_limit, 30);
