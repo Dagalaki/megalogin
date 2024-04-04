@@ -263,7 +263,6 @@ function login(auto){
 			var url2 = "http://mega.smart-tv-data.com/dev/users.php?action=verifyuser&username="+Login+"&password="+j.password;
 			me.req2 = createHttpRequest(url2, function(res) {
 				var j2 = parseJSON(res);
-				alert(j2.success);
 				if(j2.success && j2.success == false) {
 					me.verified = false;
 					
