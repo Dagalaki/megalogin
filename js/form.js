@@ -265,13 +265,15 @@ function login(auto){
 				var j2 = parseJSON(res);
 				alert(j2.success);
 				if(j2.success && j2.success == false) {
+					me.verified = false;
 					
-					if(j.password == "") showMsg("Δεν έχετε πληκρολογήσει τον κωδικό πρόσβασης.");
-					else showMsg("Ο κωδικός που δώσατε είναι λανθασμένος");
-					return true;
 				}
 			});
-			
+			if(!this.verified){
+				if(j.password == "") showMsg("Δεν έχετε πληκρολογήσει τον κωδικό πρόσβασης.");
+				else showMsg("Ο κωδικός που δώσατε είναι λανθασμένος");
+				return true;
+			}
 			setCookie('userid', j.user_id, 30);
 			setCookie('pin', j.pin, 30);
 			setCookie('ageLimit', j.age_limit, 30);
