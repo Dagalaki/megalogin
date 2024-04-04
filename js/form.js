@@ -253,6 +253,7 @@ function login(auto){
 	//var url = "http://mega.smart-tv-data.com/dev/users.php?action=login&username="+Login+"&password="+encodeURIComponent(Password);
 	var url = "http://mega.smart-tv-data.com/dev/users.php?action=login&username="+Login;
 
+	var me =this;
 	this.req = createHttpRequest(url, function(res) {
 		req = null;
 		var j = parseJSON(res);
