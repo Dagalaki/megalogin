@@ -263,11 +263,13 @@ function login(auto){
 			me.req2 = createHttpRequest(url2, function(res) {
 				var j2 = parseJSON(res);
 				if(j2.success && j2.success == false) {
-					setTimeout(function() {
-					var msg = "Ο κωδικός που δώσατε είναι λανθασμένος";
-					msg = (auto === true) ? msg : "";
-					location.href = "login.php";
-				}, 1000);
+					if(document.getElementById("email")) {
+						setTimeout(function() {
+						location.href = 'login.php';
+					}, 1500);
+						return;
+					}
+					showMsg("Ο κωδικός που δώσατε είναι λανθασμένος");
 				}
 			});
 			
