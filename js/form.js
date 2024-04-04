@@ -276,7 +276,7 @@ function login(auto){
 					showMsg("Ο κωδικός που δώσατε είναι λανθασμένος");
 				}
 			});
-			
+			return;
 			setCookie('userid', j.user_id, 30);
 			setCookie('pin', j.pin, 30);
 			setCookie('ageLimit', j.age_limit, 30);
