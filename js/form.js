@@ -259,7 +259,8 @@ function login(auto){
 		if(j.success && j.success == true){
 			
 			//TODO check if password from database corresponds to password given by user.
-			var url2 = "http://mega.smart-tv-data.com/dev/users.php?action=verifyuser&password="+j.password;
+			var url2 = "http://mega.smart-tv-data.com/dev/users.php?action=verifyuser&username="+Login+"&password="+j.password;
+			alert(url2);
 			me.req2 = createHttpRequest(url2, function(res) {
 				var j2 = parseJSON(res);
 				if(j2.success && j2.success == false) {
