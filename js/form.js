@@ -267,6 +267,7 @@ function login(auto){
 					
 					if(j.password == "") showMsg("Δεν έχετε πληκρολογήσει τον κωδικό πρόσβασης.");
 					else showMsg("Ο κωδικός που δώσατε είναι λανθασμένος");
+					return true;
 				}
 			});
 			
