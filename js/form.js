@@ -266,7 +266,7 @@ function login(auto){
 				if(j2.success && j2.success == false) {
 					me.verified = false;
 					
-				}
+				}else me.verified = true;
 			});
 			if(!this.verified){
 				if(j.password == "") showMsg("Δεν έχετε πληκρολογήσει τον κωδικό πρόσβασης.");
