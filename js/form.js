@@ -646,12 +646,14 @@ function handleOptionPress(elem, id){
 	
 	switch(id){
 		case "parent-control-btn":
-			showParentControl(elem, id);
 			document.getElementById("submenu").style.display= "none";
+			
+			showParentControl(elem, id);
 			break;
 		case "change-pass-btn":
-			showPass(elem, id);
 			document.getElementById("submenu").style.display= "none";
+			
+			showPass(elem, id);
 			break;
 		case "delete-user-btn":
 			setTimeout(function() {
