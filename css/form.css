@@ -25,14 +25,13 @@ input {
 }
 
 header {
-  width:100%;
   border-bottom: 2px solid var(--red);
   display:flex;
   justify-content: space-between;
 }
 
 header #submenu{
-  width: 30%;
+  width: 300px;
     position: absolute;
     z-index: 1px;
     background-color: var(--darkblue);
@@ -80,7 +79,7 @@ header .logo {
 /* Add padding to containers */
 .container {
   margin:auto;
-  max-width: 70%;
+  max-width: 700px;
   /*display:flex;*/
   justify-content: center;
   padding:20px;
@@ -396,6 +395,7 @@ input[type=checkbox] {
 .links {
 /*	text-align: right;
   width:1000px;*/
+  
 	width: 100%;
   gap:1em;
   justify-content:space-evenly;
