@@ -408,11 +408,11 @@ window.addEventListener("load", (event) => {
 	console.log("page is fully loaded");
 
 
-	document.getElementById("submenu").addEventListener("onmouseout", function(){
+	document.getElementById("submenu").addEventListener("mouseout", function(){
 		
 		document.getElementById("submenu").style.display = "none";
 	});
-	document.getElementById("circles").addEventListener("focus", function(){
+	document.getElementById("circles").addEventListener("mouseover", function(){
 		
 		document.getElementById("submenu").style.display = "block";
 	});
