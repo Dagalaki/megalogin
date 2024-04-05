@@ -66,6 +66,36 @@ function popup(mylink, windowname) {
 			<img src="img/logo2.png" />
 		</a>
 		<!--a class="signin" href="login.php">Είσοδος</a-->
+		<div class="links"><div><a href="login-tv.php">ΕΙΣΟΔΟΣ ΣΤΗΝ ΤΗΛΕΟΡΑΣΗ</a></div><div><a class="active" href="?action=edit">Ο ΛΟΓΑΡΙΑΣΜΟΣ ΜΟΥ</a></div>
+		<div>
+			
+      <svg id="more-options" xmlns="http://www.w3.org/2000/svg" width="25" height="7" viewBox="0 0 25 7">
+        <circle id="Ellipse_23" data-name="Ellipse 23" cx="3.5" cy="3.5" r="3.5" fill="#fff"></circle>
+        <circle id="Ellipse_24" data-name="Ellipse 24" cx="3.5" cy="3.5" r="3.5" transform="translate(9)" fill="#fff"></circle>
+        <circle id="Ellipse_25" data-name="Ellipse 25" cx="3.5" cy="3.5" r="3.5" transform="translate(18)" fill="#fff"></circle>
+      </svg>
+    	<div id="submenu" style="display: none">
+    		
+	    <div class="wrap-cols">
+	    <div class="cols">
+	      <div>
+						
+							<button id="parent-control-btn" class="a-btn" type="" onclick="handleOptionPress(this, this.id);" class="btn ">Διαχείριση Γονικού Ελέγχου</button>
+						</div>
+						
+						<div><button id="change-pass-btn"  class="a-btn" type="" onclick="handleOptionPress(this, this.id);" class="btn ">Αλλαγή κωδικού</button></div>
+						<div><button id="delete-user-btn"  class="a-btn" type="" onclick="handleOptionPress(this, this.id);" class="btn ">Διαγραφή λογαριασμού</button>
+						</div>
+						<div class="last">
+							<button id="disconnect-user-btn"  class="a-btn"  onclick="handleOptionPress(this, this.id);" class="btn ">Αποσύνδεση</button>
+							
+						</div>
+	    </div>
+	    </div>
+    
+    	</div>
+		</div>
+	</div>
 
 	</header>
 
@@ -112,7 +142,7 @@ function popup(mylink, windowname) {
 			echo '<p style="color:yellow"> '.$msg.'</p>';
 			echo '<p>Έχετε συνδεθεί ως <b>'. $username .'('.$user_id.')</b></p>';
 			echo '<div id="msg-info"></div>';
-			echo '<div class="links"><div><a class="active" href="?action=edit">Ο Λογαριασμός μου</a></div><div><a href="login-tv.php">Είσοδος στην τηλεόραση</a></div><div class="last"><a href="?action=logout">Αποσύνδεση</a></div></div>';
+			/*echo '<div class="links"><div><a class="active" href="?action=edit">Ο Λογαριασμός μου</a></div><div><a href="login-tv.php">Είσοδος στην τηλεόραση</a></div><div class="last"><a href="?action=logout">Αποσύνδεση</a></div></div>';*/
 			if ($action == 'edit') {
 				$a = explode('-', $user['birthday']);
 				$day = $a[2];
@@ -222,13 +252,7 @@ function popup(mylink, windowname) {
 						<?php
 
 						/*if($_COOKIE["userid"] == "299" || $_COOKIE["userid"] == "290" || $_COOKIE["userid"] == "265" || $_COOKIE["userid"] == "293") {*/ ?>
-						<div>
 						
-							<button type="" onclick="showParentControl(this);" class="btn registerbtn">Διαχείριση Γονικού Ελέγχου</button>
-						</div>
-						<?php /*}*/ ?>
-						<div><button type="" onclick="showPass(this);" class="btn registerbtn">Αλλαγή κωδικού</button></div>
-						<div><button type="" onclick="location='?action=del-user';" class="btn registerbtn">Διαγραφή λογαριασμού</button></div>
 					<!--div><button type="" onclick='location.href="index.php"'; class="btn registerbtn">Επιστροφή</button>
 					</div-->
 					</div>

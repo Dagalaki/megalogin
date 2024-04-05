@@ -258,37 +258,35 @@ function login(auto){
 		req = null;
 		var j = parseJSON(res);
 		if(j.success && j.success == true){
-			
-			//TODO check if password from database corresponds to password given by user.
-			var url2 = "http://mega.smart-tv-data.com/dev/users.php?action=verifyuser&username="+Login+"&password="+j.password;
-			me.req2 = createHttpRequest(url2, function(res) {
-				var j2 = parseJSON(res);
-				if(j2.success && j2.success == false) {
-					me.verified = false;
-					
-				}else me.verified = true;
-			});
-			if(this.verified == false){
-				if(j.password == "") showMsg("Δεν έχετε πληκρολογήσει τον κωδικό πρόσβασης.");
-				else showMsg("Ο κωδικός που δώσατε είναι λανθασμένος");
-				return true;
-			}
 			setCookie('userid', j.user_id, 30);
 			setCookie('pin', j.pin, 30);
 			setCookie('ageLimit', j.age_limit, 30);
 			pin = j.pin;
 			ageLimit = j.age_limit;
-
 			userid = j.user_id;
-			//showMsg("Η είσοδος πραγματοποιήθηκε με επιτυχία. Θα μεταφερθείτε στην Αρχική.");
-			setTimeout(function() {
-				var msg = "Η εγγραφή σας ολοκληρώθηκε με επιτυχία. Μπορείτε να μεταβείτε στην τηλεόραση για να απολαύσετε τις δυνατότητες του Mega Play.";
-				msg = (auto === true) ? msg : "";
-				location.href = "login-tv.php";
-				//showMsg("Η είσοδος πραγματοποιήθηκε με επιτυχία. );
-				//location.href = 'login-tv.php?msg=login-success';
 
-			}, 1000);
+			//TODO check if password from database corresponds to password given by user.
+			var url2 = "http://mega.smart-tv-data.com/dev/users.php?action=verifyuser&username="+Login+"&password="+Password;
+			me.req2 = createHttpRequest(url2, function(res) {
+				var j2 = parseJSON(res);
+				if(j2.success && j2.success == false) {
+					showMsg("Ο κωδικός που δώσατε είναι λανθασμένος");
+					return true;	
+				}else {
+					setTimeout(function() {
+					var msg = "Η εγγραφή σας ολοκληρώθηκε με επιτυχία. Μπορείτε να μεταβείτε στην τηλεόραση για να απολαύσετε τις δυνατότητες του Mega Play.";
+					msg = (auto === true) ? msg : "";
+					location.href = "login-tv.php";
+					//showMsg("Η είσοδος πραγματοποιήθηκε με επιτυχία. );
+					//location.href = 'login-tv.php?msg=login-success';
+
+				}, 1000);
+				}
+			});
+			
+			
+			//showMsg("Η είσοδος πραγματοποιήθηκε με επιτυχία. Θα μεταφερθείτε στην Αρχική.");
+			
 			
 				
 		}else if (j.success == false) {
@@ -323,11 +321,6 @@ var playbackLimit = 0;
 	this.req = createHttpRequest(url, function(res) {
 				var j = parseJSON(res);
 				if(j.success && j.success == true){
-					document.getElementById("parentControl-Container").style.display= "none";
-					
-	document.getElementById("genderli").style.display = "block";
-	document.getElementById("dobli").style.display = "block";
-	document.getElementById("edit-buttons").style.display = "block";
 					showMsg("Η ενεργοποίηση του κλειδώματος ολοκληρώθηκε με επιτυχία.");
 				}else if (j.success == false) {
 					showMsg("Παρουσιάστηκε πρόβλημα στην ενεργοποίηση κλειδώματος.");
@@ -368,6 +361,7 @@ function showParentControl(a){
 	document.getElementById("genderli").style.display = "none";
 	document.getElementById("dobli").style.display = "none";
 	document.getElementById("edit-buttons").style.display = "none";
+	
 	//a.style.display='none';
 	document.getElementById("parentControl-Container").style.display= "block";
 	//document.getElementById("data-form").style.display = "none";
@@ -384,7 +378,9 @@ function showParentControl(a){
 }
 
 function showPass(a) {
-	a.style.display='none';
+	document.getElementById("change-pass-container").style.display = "block";
+	document.getElementById("parentControl-Container").style.display = "none";
+	
 	var el = document.getElementById("new-pass-li");
 	el.style.display='block';
 	var el = document.getElementById("old-pass-li");
@@ -410,6 +406,11 @@ const errorIcon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" x
 				  '</svg>';
 window.addEventListener("load", (event) => {
 	console.log("page is fully loaded");
+
+	document.getElementById("more-options").addEventListener("click", function () {
+		openSubMenu();
+	});
+
 	if(typeof AirDatepicker != 'undefined'){
 		new AirDatepicker('#dob', {
 			locale: localeEl
@@ -627,6 +628,37 @@ window.addEventListener("load", (event) => {
 		}
 	}
 });
+
+function handleOptionPress(elem, id){
+	
+	switch(id){
+		case "parent-control-btn":
+			showParentControl(elem, id);
+			document.getElementById("submenu").style.display= "none";
+			break;
+		case "change-pass-btn":
+			showPass(elem, id);
+			document.getElementById("submenu").style.display= "none";
+			break;
+		case "delete-user-btn":
+			setTimeout(function() {
+				window.location.href='?action=del-user';
+			}, 100);
+			break;
+		case "disconnect-user-btn":
+			setTimeout(function() {
+				window.location.href='?action=logout';
+			}, 100);
+			break;
+		default:
+			break;
+	}
+}
+
+function openSubMenu(){
+	document.getElementById("submenu").style.display ="block";
+}
+
 function setFocus(el) {
 	window.setTimeout(() => el.focus(), 0);
 }

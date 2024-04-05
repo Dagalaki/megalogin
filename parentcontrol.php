@@ -99,9 +99,7 @@
 				<button onclick="activateParentControl()" type="button" class="btn registerbtn" style="width:270px">
 					Ενεργοποίηση κλειδώματος
 				</button>
-				<button onclick="closeParentControl()" type="button" class="btn registerbtn" style="width:140px">
-					Πίσω
-				</button>
+				
 			</div>
 		</div>
 	</div>
