@@ -63,6 +63,11 @@ header .logo {
   height:auto;
 }
 
+#more-options:hover circle {
+  fill: var(--red);
+}
+
+
 /* Add padding to containers */
 .container {
   margin:auto;

@@ -70,9 +70,9 @@ function popup(mylink, windowname) {
 		<div>
 			
       <svg id="more-options" xmlns="http://www.w3.org/2000/svg" width="25" height="7" viewBox="0 0 25 7">
-        <circle id="Ellipse_23" data-name="Ellipse 23" cx="3.5" cy="3.5" r="3.5" fill="#fff"></circle>
-        <circle id="Ellipse_24" data-name="Ellipse 24" cx="3.5" cy="3.5" r="3.5" transform="translate(9)" fill="#fff"></circle>
-        <circle id="Ellipse_25" data-name="Ellipse 25" cx="3.5" cy="3.5" r="3.5" transform="translate(18)" fill="#fff"></circle>
+        <circle id="circle1" data-name="Ellipse 23" cx="3.5" cy="3.5" r="3.5" fill="#fff"></circle>
+        <circle id="circle2" data-name="Ellipse 24" cx="3.5" cy="3.5" r="3.5" transform="translate(9)" fill="#fff"></circle>
+        <circle id="circle3" data-name="Ellipse 25" cx="3.5" cy="3.5" r="3.5" transform="translate(18)" fill="#fff"></circle>
       </svg>
     	<div id="submenu" style="display: none">
     		
