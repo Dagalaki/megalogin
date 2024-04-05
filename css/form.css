@@ -2,7 +2,7 @@
   --red: #D0003D;
   --white: #ffffff;
   --blue:#000B36;
-  --darkblue:#13274F;
+  --darkblue:#000620;
 }
 
 
@@ -35,7 +35,7 @@ header #submenu{
     position: absolute;
     z-index: 1px;
     background-color: var(--darkblue);
-    right:30px;
+    right:150px;
     text-align: center;
 }
 
@@ -67,6 +67,14 @@ header .logo {
   fill: var(--red);
 }
 
+#submenu button:hover{
+  color:var(--red);
+}
+
+.outerform{
+    background-color:var(--darkblue);
+    height:1200px;
+}
 
 /* Add padding to containers */
 .container {
@@ -412,7 +420,7 @@ input[type=checkbox] {
 
 .links div a{
   color:white;
-  font-size: 20px;
+  font-size: 16px;
   text-decoration: none;
 }
 

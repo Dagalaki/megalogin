@@ -407,9 +407,22 @@ const errorIcon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" x
 window.addEventListener("load", (event) => {
 	console.log("page is fully loaded");
 
-	document.getElementById("more-options").addEventListener("click", function () {
+
+	document.getElementById("submenu").addEventListener("onmouseout", function(){
+		
+		document.getElementById("submenu").style.display = "none";
+	});
+	document.getElementById("circles").addEventListener("focus", function(){
+		
+		document.getElementById("submenu").style.display = "block";
+	});
+
+
+	document.getElementById("circles").addEventListener("click", function () {
 		openSubMenu();
 	});
+
+
 
 	if(typeof AirDatepicker != 'undefined'){
 		new AirDatepicker('#dob', {

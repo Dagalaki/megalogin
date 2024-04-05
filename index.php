@@ -67,7 +67,7 @@ function popup(mylink, windowname) {
 		</a>
 		<!--a class="signin" href="login.php">Είσοδος</a-->
 		<div class="links"><div><a href="login-tv.php">ΕΙΣΟΔΟΣ ΣΤΗΝ ΤΗΛΕΟΡΑΣΗ</a></div><div><a class="active" href="?action=edit">Ο ΛΟΓΑΡΙΑΣΜΟΣ ΜΟΥ</a></div>
-		<div>
+		<div id="circles">
 			
       <svg id="more-options" xmlns="http://www.w3.org/2000/svg" width="25" height="7" viewBox="0 0 25 7">
         <circle id="circle1" data-name="Ellipse 23" cx="3.5" cy="3.5" r="3.5" fill="#fff"></circle>
