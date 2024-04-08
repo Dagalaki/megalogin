@@ -266,13 +266,23 @@ function login(auto){
 			pin = j.pin;
 			ageLimit = j.age_limit;
 			userid = j.user_id;
-			token = j.token;
+	
+			if(j.success && j.success == true){
+				setTimeout(function() {
+					location.href = "login-tv.php";
+				}, 1000);
+			}else{
+				showMsg("Ο κωδικός που δώσατε είναι λανθασμένος");
+				return true;
+			}
+
+			//token = j.token;
 
 			//Encrypted is actually an object, but you can call encrypted.toString() to get the string. 
-			var encrypted = CryptoJS.AES.encrypt("Salteddd"+Password+"", token );
+			//var encrypted = CryptoJS.AES.encrypt("Salteddd"+Password+"", token );
 
 			//TODO check if password from database corresponds to password given by user.
-			var url2 = "http://mega.smart-tv-data.com/dev/users.php?action=verifyuser&username="+Login+"&sessiontoken="+encrypted.toString();
+			/*var url2 = "http://mega.smart-tv-data.com/dev/users.php?action=verifyuser&username="+Login+"&sessiontoken="+encrypted.toString();
 			console.log(url2);
 			me.req2 = createHttpRequest(url2, function(res) {
 				var j2 = parseJSON(res);
@@ -290,7 +300,7 @@ function login(auto){
 				}, 1000);
 				}
 			});
-			
+			*/
 			
 			//showMsg("Η είσοδος πραγματοποιήθηκε με επιτυχία. Θα μεταφερθείτε στην Αρχική.");
 			
