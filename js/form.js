@@ -267,14 +267,10 @@ function login(auto){
 			ageLimit = j.age_limit;
 			userid = j.user_id;
 	
-			if(j.success && j.success == true){
-				setTimeout(function() {
+			setTimeout(function() {
 					location.href = "login-tv.php";
 				}, 1000);
-			}else{
-				showMsg("Ο κωδικός που δώσατε είναι λανθασμένος");
-				return true;
-			}
+			
 
 			//token = j.token;
 
@@ -313,7 +309,7 @@ function login(auto){
 			}, 1500);
 				return;
 			}
-			showMsg('Το email που δώσατε δεν είναι καταχωρημένο στη βάση μας.');
+			showMsg(j.msg);
 		}
 	});
 }
