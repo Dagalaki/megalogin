@@ -252,8 +252,8 @@ function login(auto){
 	var Password = document.getElementById("psw").value;
 
 
-	//var url = "http://mega.smart-tv-data.com/dev/users.php?action=login&username="+Login+"&password="+encodeURIComponent(Password);
-	var url = "http://mega.smart-tv-data.com/dev/users.php?action=login&username="+Login;
+	var url = "http://mega.smart-tv-data.com/dev/users.php?action=login&username="+Login+"&password="+encodeURIComponent(Password);
+	//var url = "http://mega.smart-tv-data.com/dev/users.php?action=login&username="+Login;
 
 	var me =this;
 	this.req = createHttpRequest(url, function(res) {
