@@ -62,6 +62,8 @@ function createHttpRequest(url, callback, options) {
 	}
 	
 	try {
+		
+		
 		req.open((options ? options.method : null) || 'GET', url, true);
 		if (!options || !options.dosend) {
 			req.send(null);
@@ -264,9 +266,14 @@ function login(auto){
 			pin = j.pin;
 			ageLimit = j.age_limit;
 			userid = j.user_id;
+			token = j.token;
+
+			//Encrypted is actually an object, but you can call encrypted.toString() to get the string. 
+			var encrypted = CryptoJS.AES.encrypt("Salteddd"+Password+"", token );
 
 			//TODO check if password from database corresponds to password given by user.
-			var url2 = "http://mega.smart-tv-data.com/dev/users.php?action=verifyuser&username="+Login+"&password="+Password;
+			var url2 = "http://mega.smart-tv-data.com/dev/users.php?action=verifyuser&username="+Login+"&sessiontoken="+encrypted.toString();
+			console.log(url2);
 			me.req2 = createHttpRequest(url2, function(res) {
 				var j2 = parseJSON(res);
 				if(j2.success && j2.success == false) {
@@ -298,7 +305,7 @@ function login(auto){
 			}
 			showMsg('Το email που δώσατε δεν είναι καταχωρημένο στη βάση μας.');
 		}
-	})
+	});
 }
 
 function closeParentControl(){
