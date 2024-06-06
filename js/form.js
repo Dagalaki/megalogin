@@ -440,7 +440,7 @@ window.addEventListener("load", (event) => {
 	});
 
 
-	document.getElementById("circles").addEventListener("click", function () {
+	if(document.getElementById("circles")) document.getElementById("circles").addEventListener("click", function () {
 		openSubMenu();
 	});
 
@@ -448,18 +448,19 @@ window.addEventListener("load", (event) => {
 
 
 	if(typeof AirDatepicker != 'undefined'){
-		new AirDatepicker('#dob', {
+		if(document.getElementById("dob")) new AirDatepicker('#dob', {
 			locale: localeEl
 		});
-		/*new AirDatepicker('#dobEdit', {
+		if(document.getElementById("dobEdit")) new AirDatepicker('#dobEdit', {
 											locale: localeEl
-			});*/
-	}
-/*$( function() {
-    $( "#dobEdit" ).datepicker();
-    $( "#dob" ).datepicker();
+			});
+	}else{
+$( function() {
+    $( "#dobEdit" ).datepicker({'language' : 'el'});
+    $( "#dob" ).datepicker({'language' : 'el'});
   } );
-*/
+}
+
 	const tp = document.getElementById('togglePassword');
 	if (tp) {
 		var password = document.querySelector("#psw");
