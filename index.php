@@ -320,12 +320,13 @@ echo '</div>';
 				</div>
 				<div>
 					<div id="" class="contextRow" data-uia="contextRowDone">Παρακαλώ συμπληρώστε τα στοιχεία για να εγγραφείτε ως νέος χρήστης!</div>
+					<div id="" class="contextRow" data-uia="contextRowDone">Τα πεδία με <label class="redstar">*</label> είναι υποχρεωτικά.</div>
 					<!--<span id="" class="contextRow" data-uia="contextRowPaperWork">Ο κωδικός χρήστη πρέπει να περιέχει τουλάχιστον 8 χαρακτήρες.</span>-->
 					<ul class="simpleForm" id="data-form">
 						<li class="nfFormSpace">
 							<div class="">
 								
-								<label class="text active" for="email">Email	<label class="redstar" >(*)</label>	
+								<label class="text active" for="email">Email	<label class="redstar" >*</label>	
 							</label>
 								<div >
 									<input type="email" autocomplete="off" placeholder="" name="email" id="email" value="<?php echo $user_email; ?>" >
@@ -342,7 +343,7 @@ echo '</div>';
 								<div id="tvcode" style="display: none"><?php echo $tvcode; ?></div>
 								
 								<label class="text" for="psw">Προσθήκη κωδικού πρόσβασης
-									<label class="redstar" >(*)</label>
+									<label class="redstar" >*</label>
 								</label>
 								<div >
 									<input type="password" autocomplete="new-password" iconaspectratio="1:1" placeholder="" value="" id="psw" name="psw">
