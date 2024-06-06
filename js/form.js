@@ -448,12 +448,12 @@ window.addEventListener("load", (event) => {
 
 
 	if(typeof AirDatepicker != 'undefined'){
-		if($("#dob")) new AirDatepicker('#dob', {
+		new AirDatepicker('#dob', {
 			locale: localeEl
 		});
-		if($("#dobEdit")) new AirDatepicker('#dobEdit', {
+		/*new AirDatepicker('#dobEdit', {
 											locale: localeEl
-			});
+			});*/
 	}
 /*$( function() {
     $( "#dobEdit" ).datepicker();
