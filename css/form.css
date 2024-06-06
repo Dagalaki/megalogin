@@ -5,6 +5,10 @@
   --darkblue:#000620;
 }
 
+.redstar{
+  color:red;
+  font-size: 12px;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;

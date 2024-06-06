@@ -324,7 +324,7 @@ echo '</div>';
 					<ul class="simpleForm" id="data-form">
 						<li class="nfFormSpace">
 							<div class="">
-								<label class="text active" for="email">Email</label>
+								<label class="text active" for="email">Email</label><label class="redstar">*</label>
 								<div >
 									<input type="email" autocomplete="off" placeholder="" name="email" id="email" value="<?php echo $user_email; ?>" >
 									<div aria-hidden="true">
@@ -338,7 +338,7 @@ echo '</div>';
 						<li data-uia="field-password+wrapper" class="nfFormSpace">
 							<div>
 								<div id="tvcode" style="display: none"><?php echo $tvcode; ?></div>
-								<label class="text" for="psw">Προσθήκη κωδικού πρόσβασης</label>
+								<label class="text" for="psw">Προσθήκη κωδικού πρόσβασης</label><label class="redstar">*</label>
 								<div >
 									<input type="password" autocomplete="new-password" iconaspectratio="1:1" placeholder="" value="" id="psw" name="psw">
 									<div aria-hidden="true" class="default-ltr-cache-emv211 ea3diy32"></div>
@@ -353,7 +353,7 @@ echo '</div>';
 						</li>
 						<li data-uia="field-password+wrapper" class="nfFormSpace">
 							<div>
-								<label class="text" for="phoneno">Αριθμός κινητού τηλεφώνου (προαιρετικός)</label>
+								<label class="text" for="phoneno">Αριθμός κινητού τηλεφώνου</label>
 								<div >
 									<input type="tel" iconaspectratio="1:1" placeholder="" value="" id="phoneno" name="phoneno">
 									<div aria-hidden="true" class="default-ltr-cache-emv211 ea3diy32"></div>
@@ -362,7 +362,7 @@ echo '</div>';
 						</li>
 						<li data-uia="field-dob+wrapper" class="nfFormSpace">
 							<div>
-								<label class="text" for="dob">Ημ/νία Γέννησης (προαιρετική)</label>
+								<label class="text" for="dob">Ημ/νία Γέννησης</label>
 								<div >
 									<input type="text" iconaspectratio="1:1" placeholder="" value="" id="dob" name="dob">
 									<div aria-hidden="true" class="default-ltr-cache-emv211 ea3diy32"></div>
@@ -376,7 +376,7 @@ echo '</div>';
 							</div>
 						</li>
 						<li class="select">
-							<label for="gender">Φύλο (προαιρετικό)</label>
+							<label for="gender">Φύλο</label>
 					<select name="gender" id="gender" >
 						<option value='' selected>Χωρίς απάντηση</option>
 						<option value='F'>Γυναίκα</option>

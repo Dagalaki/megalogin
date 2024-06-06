@@ -608,12 +608,13 @@ window.addEventListener("load", (event) => {
 						}
 					}
 					if (foc == 10) foc = 0;
-					console.log("foc: " + foc);
+					
 					setFocus(document.getElementById('code-'+ foc));
 				}
 			});
 
 			el.addEventListener('keyup', (event) => {
+				
 				var k = event.keyCode, n = parseInt(event.target.getAttribute('data-i'));
 				if (k == 0 || k == 229) {
 					k = event.target.value.charAt(event.target.selectionStart - 1).charCodeAt();
