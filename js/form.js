@@ -434,7 +434,7 @@ window.addEventListener("load", (event) => {
 		
 		document.getElementById("submenu").style.display = "none";
 	});
-	document.getElementById("circles").addEventListener("mouseover", function(){
+	if(document.getElementById("circles")) document.getElementById("circles").addEventListener("mouseover", function(){
 		
 		document.getElementById("submenu").style.display = "block";
 	});
