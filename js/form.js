@@ -1,14 +1,5 @@
 var pin = ageLimit = userid= "";
 
-if(typeof AirDatepicker != 'undefined'){
-		if($("#dob")) new AirDatepicker('#dob', {
-			locale: localeEl
-		});
-		if($("#dobEdit")) new AirDatepicker('#dobEdit', {
-											locale: localeEl
-			});
-	}
-
 function setCookie(name,value,days) {
 	var expires = "";
 	if (days) {
@@ -447,7 +438,7 @@ window.addEventListener("load", (event) => {
 
 
 
-	if(typeof AirDatepicker != 'undefined'){
+	if(0 && typeof AirDatepicker != 'undefined'){
 		if(document.getElementById("dob")) new AirDatepicker('#dob', {
 			locale: localeEl
 		});
@@ -456,8 +447,33 @@ window.addEventListener("load", (event) => {
 			});
 	}else{
 
-    if(document.getElementById("dobEdit")) $( "#dobEdit" ).datepicker({'language' : 'el'});
-    if(document.getElementById("dob")) $( "#dob" ).datepicker({'language' : 'el'});
+		var options = {
+			format: 'dd/mm/yyyy',
+			todayHighlight: true,
+			autoclose: true,
+			language: 'el'
+		};
+		$.datepicker.regional['el'] = {
+	                closeText: 'Κλείσιμο',
+	                prevText: 'Προηγούμενος',
+	                nextText: 'Επόμενος',
+	                currentText: 'Τρέχων Μήνας',
+	                monthNames: ['Ιανουάριος','Φεβρουάριος','Μάρτιος','Απρίλιος','Μάιος','Ιούνιος',
+	                'Ιούλιος','Αύγουστος','Σεπτέμβριος','Οκτώβριος','Νοέμβριος','Δεκέμβριος'],
+	                monthNamesShort: ['Ιαν','Φεβ','Μαρ','Απρ','Μαι','Ιουν',
+	                'Ιουλ','Αυγ','Σεπ','Οκτ','Νοε','Δεκ'],
+	                dayNames: ['Κυριακή','Δευτέρα','Τρίτη','Τετάρτη','Πέμπτη','Παρασκευή','Σάββατο'],
+	                dayNamesShort: ['Κυρ','Δευ','Τρι','Τετ','Πεμ','Παρ','Σαβ'],
+	                dayNamesMin: ['Κυ','Δε','Τρ','Τε','Πε','Πα','Σα'],
+	                weekHeader: 'Εβδ',
+	                dateFormat: 'dd/mm/yyyy',
+	                firstDay: 1,
+	                isRTL: false,
+	                showMonthAfterYear: false,
+	                yearSuffix: ''};
+	        $.datepicker.setDefaults($.datepicker.regional['el']);
+    if(document.getElementById("dobEdit")) $( "#dobEdit" ).datepicker(options);
+    if(document.getElementById("dob")) $( "#dob" ).datepicker(options);
   
 }
 
