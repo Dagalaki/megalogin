@@ -455,10 +455,10 @@ window.addEventListener("load", (event) => {
 											locale: localeEl
 			});
 	}else{
-$( function() {
-    $( "#dobEdit" ).datepicker({'language' : 'el'});
-    $( "#dob" ).datepicker({'language' : 'el'});
-  } );
+
+    if(document.getElementById("dobEdit")) $( "#dobEdit" ).datepicker({'language' : 'el'});
+    if(document.getElementById("dob")) $( "#dob" ).datepicker({'language' : 'el'});
+  
 }
 
 	const tp = document.getElementById('togglePassword');
@@ -626,6 +626,7 @@ $( function() {
 			el.addEventListener('keyup', (event) => {
 
 				var k = event.keyCode, n = parseInt(event.target.getAttribute('data-i'));
+				console.log("code key up event, n : " + n);
 				if (k == 0 || k == 229) {
 					k = event.target.value.charAt(event.target.selectionStart - 1).charCodeAt();
 					
