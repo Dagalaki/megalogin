@@ -1,4 +1,5 @@
 <?php
+
 //header('Content-Type: application/vnd.hbbtv.xhtml+xml; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 echo ('<?xml version="1.0" encoding="utf-8" ?>');
@@ -342,7 +343,7 @@ echo '</div>';
 							<div>
 								<div id="tvcode" style="display: none"><?php echo $tvcode; ?></div>
 								
-								<label class="text" for="psw">Προσθήκη κωδικού πρόσβασης
+								<label class="text" for="psw"> Κωδικός Πρόσβασης
 									<label class="redstar" >*</label>
 								</label>
 								<div >

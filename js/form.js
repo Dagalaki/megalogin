@@ -421,7 +421,7 @@ window.addEventListener("load", (event) => {
 	console.log("page is fully loaded");
 
 
-	document.getElementById("submenu").addEventListener("mouseout", function(){
+	if(document.getElementById("submenu")) document.getElementById("submenu").addEventListener("mouseout", function(){
 		
 		document.getElementById("submenu").style.display = "none";
 	});
@@ -439,10 +439,10 @@ window.addEventListener("load", (event) => {
 
 
 	if(typeof AirDatepicker != 'undefined'){
-		new AirDatepicker('#dob', {
+		if($("#dob")) new AirDatepicker('#dob', {
 			locale: localeEl
 		});
-		new AirDatepicker('#dobEdit', {
+		if($("#dobEdit")) new AirDatepicker('#dobEdit', {
 											locale: localeEl
 			});
 	}
@@ -614,7 +614,7 @@ window.addEventListener("load", (event) => {
 			});
 
 			el.addEventListener('keyup', (event) => {
-				
+
 				var k = event.keyCode, n = parseInt(event.target.getAttribute('data-i'));
 				if (k == 0 || k == 229) {
 					k = event.target.value.charAt(event.target.selectionStart - 1).charCodeAt();
