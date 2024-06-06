@@ -471,7 +471,7 @@ window.addEventListener("load", (event) => {
 	                isRTL: false,
 	                changeMonth: true,
      changeYear: true,
-     yearRange: "2024:1930",
+     yearRange: "1930:2024",
 	                showMonthAfterYear: false,
 	                yearSuffix: ''};
 	        $.datepicker.setDefaults($.datepicker.regional['el']);
