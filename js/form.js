@@ -169,7 +169,7 @@ function resetPassword(){
 		showMsg("Παρακαλώ πληκρολογήστε τη διεύθυνση email σας για να σας αποσταλεί εκεί ο σύνδεσμος ανάκτησης του κωδικού πρόσβασης.");
 		return true;
 	}
-	var url = "http://mega.smart-tv-data.com/dev/users.php?action=resetpsw&email=" +email; 
+	var url = "http://cdn1.megatv-ctv.com/dev/users.php?action=resetpsw&email=" +email; 
 	
 	this.req = createHttpRequest(url, function(res) {
 		req = null;
@@ -225,7 +225,7 @@ function signup(){
 	}else{
 		var birthday = "";
 	}
-	var url = "http://mega.smart-tv-data.com/dev/users.php?action=signup&username="+Email+"&password="+encodeURIComponent(Password) +'&gender='+ gender +'&birthday='+ birthday;
+	var url = "http://cdn1.megatv-ctv.com/dev/users.php?action=signup&username="+Email+"&password="+encodeURIComponent(Password) +'&gender='+ gender +'&birthday='+ birthday;
 	
 	this.req = createHttpRequest(url, function(res) {
 		req = null;
