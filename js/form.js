@@ -469,6 +469,8 @@ window.addEventListener("load", (event) => {
 	                dateFormat: 'dd/mm/yy',
 	                firstDay: 1,
 	                isRTL: false,
+	                changeMonth: true,
+     changeYear: true,
 	                showMonthAfterYear: false,
 	                yearSuffix: ''};
 	        $.datepicker.setDefaults($.datepicker.regional['el']);
