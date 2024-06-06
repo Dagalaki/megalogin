@@ -453,6 +453,7 @@ window.addEventListener("load", (event) => {
 			autoclose: true,
 			language: 'el'
 		};
+		if (window.jQuery) {  
 		$.datepicker.regional['el'] = {
 	                closeText: 'Κλείσιμο',
 	                prevText: 'Προηγούμενος',
@@ -477,7 +478,7 @@ window.addEventListener("load", (event) => {
 	        $.datepicker.setDefaults($.datepicker.regional['el']);
     if(document.getElementById("dobEdit")) $( "#dobEdit" ).datepicker(options);
     if(document.getElementById("dob")) $( "#dob" ).datepicker(options);
-  
+  }
 }
 
 	const tp = document.getElementById('togglePassword');
