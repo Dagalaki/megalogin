@@ -34,11 +34,17 @@ if ($user_id) {
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,shrink-to-fit=no, viewport-fit=cover">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
 	<script type="text/javascript" src="js/form.js?<?php echo rand()?>"></script>
 	<link rel="stylesheet" href="css/form.css?<?php echo rand()?>" />
 	<link href=" https://cdn.jsdelivr.net/npm/air-datepicker@3.4.0/air-datepicker.min.css " rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	<script src=" https://cdn.jsdelivr.net/npm/air-datepicker@3.4.0/air-datepicker.min.js "></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+
 <style>
 .content-wrap {
 	color: #fff;
@@ -239,7 +245,7 @@ function popup(mylink, windowname) {
 											<option value='O' <?php echo ($gender == "O")? "selected": ""; ?>>Άλλο</option>
 										</select>
 									</li>
-									<input type="hidden" id="uid" value="<?php echo $user_id;?>">
+									<input type="hidden" id="uid" value="<?php echo $user_id; ?>" >
 									
 
 

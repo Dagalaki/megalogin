@@ -437,11 +437,20 @@ window.addEventListener("load", (event) => {
 
 
 
+
 	if(typeof AirDatepicker != 'undefined'){
 		new AirDatepicker('#dob', {
 			locale: localeEl
 		});
+		new AirDatepicker('#dobEdit', {
+											locale: localeEl
+			});
 	}
+/*$( function() {
+    $( "#dobEdit" ).datepicker();
+    $( "#dob" ).datepicker();
+  } );
+*/
 	const tp = document.getElementById('togglePassword');
 	if (tp) {
 		var password = document.querySelector("#psw");
@@ -583,6 +592,7 @@ window.addEventListener("load", (event) => {
 	}
 	var el = document.getElementById("action");
 	if (el && el.value == 'codelogin') {
+
 		document.getElementById("code-0").focus();
 
 		for (var i = 0; i < 6; i++) {
@@ -598,6 +608,7 @@ window.addEventListener("load", (event) => {
 						}
 					}
 					if (foc == 10) foc = 0;
+					console.log("foc: " + foc);
 					setFocus(document.getElementById('code-'+ foc));
 				}
 			});
@@ -606,7 +617,9 @@ window.addEventListener("load", (event) => {
 				var k = event.keyCode, n = parseInt(event.target.getAttribute('data-i'));
 				if (k == 0 || k == 229) {
 					k = event.target.value.charAt(event.target.selectionStart - 1).charCodeAt();
+					
 				}
+
 				if (k != 9 && k != 8 && k != 37 && k != 39 && (k < 48 || k > 57) && !(k > 95 && k < 106)) {
 					event.target.value = "";
 					return ;
@@ -688,6 +701,8 @@ function openSubMenu(){
 }
 
 function setFocus(el) {
+	console.log("set focus");
+	console.log(el);
 	window.setTimeout(() => el.focus(), 0);
 }
 function setBlur(el) {
