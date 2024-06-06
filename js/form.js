@@ -1,5 +1,14 @@
 var pin = ageLimit = userid= "";
 
+if(typeof AirDatepicker != 'undefined'){
+		if($("#dob")) new AirDatepicker('#dob', {
+			locale: localeEl
+		});
+		if($("#dobEdit")) new AirDatepicker('#dobEdit', {
+											locale: localeEl
+			});
+	}
+
 function setCookie(name,value,days) {
 	var expires = "";
 	if (days) {
