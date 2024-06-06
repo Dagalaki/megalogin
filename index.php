@@ -324,8 +324,8 @@ echo '</div>';
 					<ul class="simpleForm" id="data-form">
 						<li class="nfFormSpace">
 							<div class="">
-								<label class="text active" for="email">Email
 								<span class="redstar" >(*)</span>
+								<label class="text active" for="email">Email		
 							</label>
 								<div >
 									<input type="email" autocomplete="off" placeholder="" name="email" id="email" value="<?php echo $user_email; ?>" >
@@ -340,8 +340,9 @@ echo '</div>';
 						<li data-uia="field-password+wrapper" class="nfFormSpace">
 							<div>
 								<div id="tvcode" style="display: none"><?php echo $tvcode; ?></div>
+								<span class="redstar" >(*)</span>
 								<label class="text" for="psw">Προσθήκη κωδικού πρόσβασης
-									<span class="redstar" >(*)</span>
+									
 								</label>
 								<div >
 									<input type="password" autocomplete="new-password" iconaspectratio="1:1" placeholder="" value="" id="psw" name="psw">
